@@ -9,71 +9,48 @@ public class Car {
 
     private int totalCapacity;
     private int carId;
+    private long  carcost=-1;
+
+    private ArrayList<Student> passengerList = new ArrayList<Student>();
+
+    public Car() { }
+    public Car(int carId,int totalCapacity) {
+        this.carId = carId;
+        this.totalCapacity = totalCapacity;
+    }
 
     public long getCarcost() {
         return carcost;
     }
-
     public void setCarcost(long carcost) {
         this.carcost = carcost;
     }
-
-    private long  carcost=-1;
-    private ArrayList<Student> passengerList = new ArrayList<Student>();
-
     public int getCarId() {
         return carId;
     }
-
     public  void setTotalCapacity(int totalCapacity) {
         this.totalCapacity = totalCapacity;
     }
-
-
     public ArrayList<Student> getPassengerList() {
         return passengerList;
     }
-
-    public Car() {
-
-
-    }
-
-    public Car(int carId,int totalCapacity) {
-        this.carId = carId;
-        this.totalCapacity = totalCapacity;
-
-    }
-
-
     public int getTotalCapacity() {
         return totalCapacity;
     }
-
     public void addPassengerToCar(Student student)
     {
-
-            passengerList.add(student);
-            carcost=computeCarCost();
-
-
+        passengerList.add(student);
+        carcost=computeCarCost();
     }
     public void addPassengerPositionToCar(Student student,int position)
     {
-
         passengerList.add(position,student);
         carcost=computeCarCost();
-
-
     }
-
     public void removePassengerFromCar(Student student)
     {
-
         passengerList.remove(student);
         carcost=computeCarCost();
-
-
     }
     public boolean areSlotsRemaining()
     {
@@ -81,12 +58,10 @@ public class Car {
             return true;
         else
             return false;
-
     }
     public int slotsRemaining()
     {
         return totalCapacity-passengerList.size();
-
     }
     public boolean isEmpty()
     {
@@ -95,7 +70,6 @@ public class Car {
         else
             return false;
     }
-
     public void getCarAndPassengerDetais()
     {
         System.out.println("car ID"+carId);
@@ -125,11 +99,8 @@ public class Car {
         }
         else
             return -1;
-
     }
-
     public static Comparator<Car> carCostComparator = new Comparator<Car>() {
-
         public int compare(Car s1, Car s2) {
             int carcost1 = (int)s1.getCarcost();
             int carcost2 = (int)s2.getCarcost();
@@ -140,7 +111,4 @@ public class Car {
             //descending order
             //return StudentName2.compareTo(StudentName1);
         }};
-
-
-
 }

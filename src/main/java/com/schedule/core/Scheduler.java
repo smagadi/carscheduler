@@ -4,11 +4,8 @@ import com.schedule.domain.Car;
 import com.schedule.domain.Student;
 import com.schedule.util.Helper;
 import com.schedule.util.Time;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Iterator;
 
 
 public class Scheduler {
@@ -90,11 +87,9 @@ private static void optimizeOnceMore( ArrayList carList) throws Exception {
                          }
                          else
                          {
-
                              break;
                          }
                      }
-
                  }
              }
              //Remove the data from heavy car and stop processing
@@ -104,21 +99,9 @@ private static void optimizeOnceMore( ArrayList carList) throws Exception {
              }
              emptyCarSize=emptyCarSize-1;
              indexOfEmptyCar++;
-
          }
-
-
-
-
  }
-
-
-
-
 }
-
-
-
     /*
         1. If the number of students == number of slots do not waste time .
 
@@ -136,8 +119,6 @@ private static void optimizeOnceMore( ArrayList carList) throws Exception {
     private static void optimize(ArrayList timeTable, ArrayList carList,int carSlots) throws Exception
     {
 
-
-        int totalSlot= carSlots;
         Student previousStudent=null;
         Student currentStudent =null;
         Car currentCar=null;
@@ -150,8 +131,6 @@ private static void optimizeOnceMore( ArrayList carList) throws Exception {
              Helper.allocateStudentACar(timeTable,carList);
              return;
         }
-
-
         for (int tt=0;tt<timeTableSize;tt++) // Loop the Time Table
         {
             currentStudent= (Student) timeTable.get(tt);
@@ -171,8 +150,7 @@ private static void optimizeOnceMore( ArrayList carList) throws Exception {
                 Time prevTime =previousStudent.getArrivalTime();
                 Time currTime = currentStudent.getArrivalTime();
 
-                if(tt+1 < timeTable.size())// Not the last student then we can optimizie
-
+                if(tt+1 < timeTable.size())// Not the last student then we can optimizied
                 {
                     Time nextTime = ((Student) timeTable.get(tt+1)).getArrivalTime();
 
@@ -190,7 +168,6 @@ private static void optimizeOnceMore( ArrayList carList) throws Exception {
                             indexofCurrentCar++;
                             Helper.addToNextCar(indexofCurrentCar, carList, currentStudent);
                         }
-
                     }
                     else //ok now we can decide to push the current student in current car or next car
                     {
@@ -202,7 +179,6 @@ private static void optimizeOnceMore( ArrayList carList) throws Exception {
                         {
                             //push this guy to next car
                             indexofCurrentCar++;
-
                              currentCar = (Car)carList.get(indexofCurrentCar);
                             currentCar.addPassengerToCar(currentStudent);
                         }
@@ -223,10 +199,7 @@ private static void optimizeOnceMore( ArrayList carList) throws Exception {
                         indexofCurrentCar++;
                         currentCar = (Car)carList.get(indexofCurrentCar);
                         currentCar.addPassengerToCar(currentStudent);
-
                     }
-
-
                 }
                 previousStudent=currentStudent;
                 currentCar=(Car)carList.get(indexofCurrentCar);
@@ -234,7 +207,4 @@ private static void optimizeOnceMore( ArrayList carList) throws Exception {
         }
 
     }
-
-
-
 }
