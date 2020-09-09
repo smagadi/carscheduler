@@ -7,7 +7,6 @@ import com.schedule.util.Time;
 import java.util.ArrayList;
 import java.util.Collections;
 
-
 public class Scheduler {
 
 
@@ -26,17 +25,15 @@ public static void optimzer(ArrayList timeTable, ArrayList carList,int carSlots)
 }
 
 /*
-`   1.Get the carcosts in decreasing order
+`
+    1.Get the carcosts in decreasing order
     2.Find out if there are empty cars
     3.Loop through the heavy costing cars
-     4.Move the last element to empty car
-        5.Loop
+    4.Move the last element to empty car
+    5.Loop
         Get the next last from the to be obtimzed car and check if the time nears the empty car one if so move passenger to that car
         Else do not move exit the Loop
-        6.end Loop
-
-
-
+    6.end Loop
  */
 private static void optimizeOnceMore( ArrayList carList) throws Exception {
 
