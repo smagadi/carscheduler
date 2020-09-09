@@ -42,15 +42,7 @@ public class Helper {
     {
         return new String(String.valueOf(getTotalCarCost(carList)));
     }
-
-    public static void getCostlyCars(ArrayList carList)
-    {
-        Collections.sort(carList);
-
-        for(Object str: carList){
-            System.out.println(str);}
-    }
-    public static ArrayList<Car> getEmptyCarList(ArrayList carList)
+   public static ArrayList<Car> getEmptyCarList(ArrayList carList)
     {
         ArrayList<Car> emptyCarsList = new ArrayList<Car>();
         for(int i=0;i<carList.size();i++)
@@ -60,22 +52,6 @@ public class Helper {
                 emptyCarsList.add(car);
         }
         return emptyCarsList;
-    }
-    public static ArrayList<Car> cloneCarsList(ArrayList<Car> carList) {
-
-        ArrayList<Car> carListClone = new ArrayList<>();
-        Iterator<Car> iterator = carList.iterator();
-        while (iterator.hasNext()) {
-            Car car = iterator.next();
-            Car newCar = new Car(car.getCarId(), car.getTotalCapacity());
-            Iterator<Student> oldStudent = car.getPassengerList().iterator();
-            while (oldStudent.hasNext()) {
-                Student newStudent = new Student(oldStudent.next().getStudentId(), oldStudent.next().getArrivalTimeAsString());
-                newCar.addPassengerToCar(newStudent);
-            }
-            carListClone.add(newCar);
-        }
-        return carListClone;
     }
     public static   void allocateStudentACar(ArrayList timeTable, ArrayList carList)
     {
