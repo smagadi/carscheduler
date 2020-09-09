@@ -16,6 +16,7 @@ public static void optimzer(ArrayList timeTable, ArrayList carList,int carSlots)
     try
     {
         optimize( timeTable,  carList, carSlots);
+        //This method uses any of the unused cars for further optimization , TODO this has to be merged in future in the optimize method
         optimizeOnceMore(carList);
     }
     catch (Exception e)
@@ -131,11 +132,13 @@ private static void optimizeOnceMore( ArrayList carList) throws Exception {
              Helper.allocateStudentACar(timeTable,carList);
              return;
         }
-        for (int tt=0;tt<timeTableSize;tt++) // Loop the Time Table
+        //TODO create a condition to handle if the number of students and slots are exactly same
+
+        for (int tt=0;tt<timeTableSize;tt++) // Loop the Time Table ArrayList
         {
             currentStudent= (Student) timeTable.get(tt);
 
-            if (tt== 0)//First student ,there is nothing to compare
+            if (tt== 0)//First student ,there is nothing to compare so push this guy to the first car
             {
                 //Add the student to first car
                 Car firstCar = (Car) carList.get(tt);
@@ -145,7 +148,7 @@ private static void optimizeOnceMore( ArrayList carList) throws Exception {
             }
             else//Second student onwards
             {
-               //Find the time differnce between the current student to previous and next student
+               //Find the time differnce between the current student's arrival time to previous and next student's arrival time
 
                 Time prevTime =previousStudent.getArrivalTime();
                 Time currTime = currentStudent.getArrivalTime();
@@ -157,7 +160,7 @@ private static void optimizeOnceMore( ArrayList carList) throws Exception {
                     long diffWithPrevStudent= Time.getTimeDiffernce(prevTime,currTime);
                     long diffWithNextStudent= Time.getTimeDiffernce(currTime,nextTime);
 
-                    if(diffWithPrevStudent<= diffWithNextStudent)
+                    if(diffWithPrevStudent<= diffWithNextStudent) //This means that current Student has arrived much near to previous student
                     {
                         //Check of the current car has slots
 
@@ -171,15 +174,16 @@ private static void optimizeOnceMore( ArrayList carList) throws Exception {
                     }
                     else //ok now we can decide to push the current student in current car or next car
                     {
-                        //Check if there are more slots available in further cars if not push this guy in current car
+                        //Check if there are enough slots available in further cars if not push this guy in current car
 
                        if(Helper.getSlotsRemaining(indexofCurrentCar+1,carList)-Helper.getStudentsTobeAllocated(tt+1,timeTable)>0
                         || ! currentCar.areSlotsRemaining()
                         )
                         {
                             //push this guy to next car
+                            //TODO This code has to be refactored
                             indexofCurrentCar++;
-                             currentCar = (Car)carList.get(indexofCurrentCar);
+                            currentCar = (Car)carList.get(indexofCurrentCar);
                             currentCar.addPassengerToCar(currentStudent);
                         }
                         else
@@ -195,6 +199,7 @@ private static void optimizeOnceMore( ArrayList carList) throws Exception {
                     if (currentCar.areSlotsRemaining()) {
                         currentCar.addPassengerToCar(currentStudent);
                     } else if (indexofCurrentCar < carList.size() - 1) {
+                        //TODO Duplicate code move to a common method
                         //push this guy to next car
                         indexofCurrentCar++;
                         currentCar = (Car)carList.get(indexofCurrentCar);
