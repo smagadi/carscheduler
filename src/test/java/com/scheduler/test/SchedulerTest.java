@@ -731,6 +731,139 @@ public class SchedulerTest {
 
 
     }
+    @Test
+    public void Sevencars3Slots09Students() {
+
+        int totalcars= 7;
+        int slotsInCar=3;
+
+        ArrayList<Car> carsList1= new ArrayList<Car>();
+        for(int i=0;i< totalcars ;i++)
+        {
+            Car car= new Car(i,slotsInCar);
+            carsList1.add(car);
+
+        }
+
+        Student s111 = new Student(111,"10:30");
+        Student s211 = new Student(211,"10:31");
+        Student s311 = new Student(311,"10:32");
+        Student s411 = new Student(411,"10:33");
+        Student s511 = new Student(511,"10:45");
+        Student s611 = new Student(611,"10:46");
+        Student s711 = new Student(711,"10:50");
+        Student s811 = new Student(811,"10:52");
+        Student s911 = new Student(611,"10:53");
+
+
+
+        ArrayList<Student> timeTable1 = new ArrayList<Student>();
+        timeTable1.add(s111);
+        timeTable1.add(s211);
+        timeTable1.add(s311);
+        timeTable1.add(s411);
+        timeTable1.add(s511);
+        timeTable1.add(s611);
+        timeTable1.add(s711);
+        timeTable1.add(s811);
+        timeTable1.add(s911);
+
+
+
+
+
+        try {
+            Scheduler.optimzer(timeTable1, carsList1,slotsInCar);
+            for(int i=0;i< carsList1.size() ;i++)
+            {
+
+                carsList1.get(i).getCarAndPassengerDetais();
+
+            }
+            System.out.println("==============First List ============");
+
+            //optimizedList = Scheduler.optimize2(carsList1);
+
+            assertEquals("2.0",Helper.getTotalCarCostString(carsList1));
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+
+
+    }
+
+    @Test
+    public void Tencars2Slots12Students() {
+
+        int totalcars= 10;
+        int slotsInCar=2;
+
+        ArrayList<Car> carsList1= new ArrayList<Car>();
+        for(int i=0;i< totalcars ;i++)
+        {
+            Car car= new Car(i,slotsInCar);
+            carsList1.add(car);
+
+        }
+
+        Student s111 = new Student(111,"13:30");
+        Student s211 = new Student(211,"13:31");
+        Student s311 = new Student(311,"13:31");
+        Student s411 = new Student(411,"13:45");
+        Student s511 = new Student(511,"15:45");
+        Student s611 = new Student(611,"16:01");
+        Student s711 = new Student(711,"16:35");
+        Student s811 = new Student(811,"16:42");
+        Student s911 = new Student(911,"16:47");
+        Student s1011 = new Student(1011,"18:08");
+        Student s1111 = new Student(1111,"19:42");
+        Student s1211 = new Student(1211,"20:22");
+
+
+
+        ArrayList<Student> timeTable1 = new ArrayList<Student>();
+        timeTable1.add(s111);
+        timeTable1.add(s211);
+        timeTable1.add(s311);
+        timeTable1.add(s411);
+        timeTable1.add(s511);
+        timeTable1.add(s611);
+        timeTable1.add(s711);
+        timeTable1.add(s811);
+        timeTable1.add(s911);
+        timeTable1.add(s1011);
+        timeTable1.add(s1111);
+        timeTable1.add(s1211);
+
+
+
+
+
+        try {
+            Scheduler.optimzer(timeTable1, carsList1,slotsInCar);
+            for(int i=0;i< carsList1.size() ;i++)
+            {
+
+                carsList1.get(i).getCarAndPassengerDetais();
+
+            }
+            System.out.println("==============First List ============");
+
+            //optimizedList = Scheduler.optimize2(carsList1);
+
+            assertEquals("5.0",Helper.getTotalCarCostString(carsList1));
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+
+
+    }
 
 
 }
