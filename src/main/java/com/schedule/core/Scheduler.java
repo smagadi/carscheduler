@@ -7,9 +7,21 @@ import com.schedule.util.Time;
 import java.util.ArrayList;
 import java.util.Collections;
 
+
+
 public class Scheduler {
 
+    /*
+        S=  Number of Students
+        C=  Number of Cars
+        ----------------------------------------------------------------------------------------------
+        Function          |     Worst case Performance complexity  |    Worst case  Space complexity
+        ----------------------------------------------------------------------------------------------
 
+     1. optimize                    O(S)                                O(S) + O(C)
+     2. optimizeOnceMore            O(C)                                O(C)
+     3. Overall                     O(S) (Assuming students >cars)      O(C^2) + O(S)
+     */
 public static void optimzer(ArrayList timeTable, ArrayList carList,int carSlots)
 {
     try
@@ -34,6 +46,10 @@ public static void optimzer(ArrayList timeTable, ArrayList carList,int carSlots)
         Get the next last from the to be obtimzed car and check if the time nears the empty car one if so move passenger to that car
         Else do not move exit the Loop
     6.end Loop
+    ==========================Big 0 Analysis=================
+    1.Sort -> uses dual-pivot Quicksort  Performance (0(n log n)) Space O(n^2)
+    2.Performance O(C) -> C=  Number of empty cars , Space complexeity = O(n)  = All cars
+    3.Worst case Performance O(C) and Space is O(C^2)
  */
 private static void optimizeOnceMore( ArrayList carList) throws Exception {
 
@@ -110,7 +126,8 @@ private static void optimizeOnceMore( ArrayList carList) throws Exception {
              2. pick up the second student and find where is closer , if closer to first person then put this person in car 1
              3.If closer to next person then check if how many students has to be allocated and if there are enough capacity
              4.If there then push this person to next car else push him to first car
-
+        =================Big O Analysis=======================
+        1.Performance is O(S) S = number of Students . Space complexeity =O(S) S = number of students + O(C) C = number of Cars
 
         */
 
