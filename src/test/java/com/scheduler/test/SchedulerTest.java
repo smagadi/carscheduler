@@ -23,12 +23,7 @@ public class SchedulerTest {
         int slotsInCar=3;
 
         ArrayList<Car> carsList1= new ArrayList<Car>();
-        for(int i=0;i< totalcars ;i++)
-        {
-            Car car= new Car(i,slotsInCar);
-            carsList1.add(car);
-
-        }
+        initializeCars(carsList1,totalcars,slotsInCar);
 
         Student s111 = new Student(111,"01:01");
         Student s211 = new Student(211,"01:02");
@@ -38,22 +33,15 @@ public class SchedulerTest {
 
 
         ArrayList<Student> timeTable1 = new ArrayList<Student>();
+
         timeTable1.add(s111);
         timeTable1.add(s211);
         timeTable1.add(s311);
         //timeTable1.add(s411);
 
         try {
-            Scheduler.optimzer(timeTable1, carsList1,slotsInCar);
-            for(int i=0;i< carsList1.size() ;i++)
-            {
 
-                carsList1.get(i).getCarAndPassengerDetais();
-
-            }
-            System.out.println("==============First List ============");
-
-            //optimizedList= Scheduler.optimize2(carsList1);
+            printData(timeTable1,carsList1,slotsInCar);
 
             assertEquals("63.0", Helper.getTotalCarCostString(carsList1));
         }
@@ -73,12 +61,7 @@ public class SchedulerTest {
         int slotsInCar=2;
 
         ArrayList<Car> carsList1= new ArrayList<Car>();
-        for(int i=0;i< totalcars ;i++)
-        {
-            Car car= new Car(i,slotsInCar);
-            carsList1.add(car);
-
-        }
+        initializeCars(carsList1,totalcars,slotsInCar);
 
         Student s111 = new Student(111,"01:01");
         Student s211 = new Student(211,"01:02");
@@ -95,17 +78,7 @@ public class SchedulerTest {
         timeTable1.add(s411);
 
         try {
-            Scheduler.optimzer(timeTable1, carsList1,slotsInCar);
-            for(int i=0;i< carsList1.size() ;i++)
-            {
-
-                carsList1.get(i).getCarAndPassengerDetais();
-
-            }
-            System.out.println("==============First List ============");
-
-            //optimizedList= Scheduler.optimize2(carsList1);
-
+            printData(timeTable1,carsList1,slotsInCar);
             assertEquals("7.0",Helper.getTotalCarCostString(carsList1));
         }
         catch (Exception e)
@@ -123,12 +96,7 @@ public class SchedulerTest {
         int slotsInCar=2;
 
         ArrayList<Car> carsList1= new ArrayList<Car>();
-        for(int i=0;i< totalcars ;i++)
-        {
-            Car car= new Car(i,slotsInCar);
-            carsList1.add(car);
-
-        }
+        initializeCars(carsList1,totalcars,slotsInCar);
 
         Student s111 = new Student(111,"01:01");
         Student s211 = new Student(211,"01:02");
@@ -145,17 +113,7 @@ public class SchedulerTest {
         timeTable1.add(s411);
 
         try {
-            Scheduler.optimzer(timeTable1, carsList1,slotsInCar);
-            for(int i=0;i< carsList1.size() ;i++)
-            {
-
-                carsList1.get(i).getCarAndPassengerDetais();
-
-            }
-            System.out.println("==============First List ============");
-
-            //optimizedList = Scheduler.optimize2(carsList1);
-
+            printData(timeTable1,carsList1,slotsInCar);
             assertEquals("1.0",Helper.getTotalCarCostString(carsList1));
         }
         catch (Exception e)
@@ -174,12 +132,7 @@ public class SchedulerTest {
         int slotsInCar=3;
 
         ArrayList<Car> carsList1= new ArrayList<Car>();
-        for(int i=0;i< totalcars ;i++)
-        {
-            Car car= new Car(i,slotsInCar);
-            carsList1.add(car);
-
-        }
+        initializeCars(carsList1,totalcars,slotsInCar);
 
         Student s111 = new Student(111,"01:01");
         Student s211 = new Student(211,"01:02");
@@ -196,17 +149,7 @@ public class SchedulerTest {
         timeTable1.add(s411);
 
         try {
-            Scheduler.optimzer(timeTable1, carsList1,slotsInCar);
-            for(int i=0;i< carsList1.size() ;i++)
-            {
-
-                carsList1.get(i).getCarAndPassengerDetais();
-
-            }
-            System.out.println("==============First List ============");
-
-            //optimizedList = Scheduler.optimize2(carsList1);
-
+            printData(timeTable1,carsList1,slotsInCar);
             assertEquals("1.0",Helper.getTotalCarCostString(carsList1));
         }
         catch (Exception e)
@@ -224,12 +167,7 @@ public class SchedulerTest {
         int slotsInCar=2;
 
         ArrayList<Car> carsList1= new ArrayList<Car>();
-        for(int i=0;i< totalcars ;i++)
-        {
-            Car car= new Car(i,slotsInCar);
-            carsList1.add(car);
-
-        }
+        initializeCars(carsList1,totalcars,slotsInCar);
 
         Student s111 = new Student(111,"01:01");
         Student s211 = new Student(211,"01:22");
@@ -255,17 +193,7 @@ public class SchedulerTest {
         timeTable1.add(s811);
 
         try {
-            Scheduler.optimzer(timeTable1, carsList1,slotsInCar);
-            for(int i=0;i< carsList1.size() ;i++)
-            {
-
-                carsList1.get(i).getCarAndPassengerDetais();
-
-            }
-            System.out.println("==============First List ============");
-
-            //optimizedList = Scheduler.optimize2(carsList1);
-
+            printData(timeTable1,carsList1,slotsInCar);
             assertEquals("53.0",Helper.getTotalCarCostString(carsList1));
         }
         catch (Exception e)
@@ -284,12 +212,7 @@ public class SchedulerTest {
         int slotsInCar=2;
 
         ArrayList<Car> carsList1= new ArrayList<Car>();
-        for(int i=0;i< totalcars ;i++)
-        {
-            Car car= new Car(i,slotsInCar);
-            carsList1.add(car);
-
-        }
+        initializeCars(carsList1,totalcars,slotsInCar);
 
         Student s111 = new Student(111,"01:01");
         Student s211 = new Student(211,"01:22");
@@ -303,17 +226,7 @@ public class SchedulerTest {
         timeTable1.add(s411);
 
         try {
-            Scheduler.optimzer(timeTable1, carsList1,slotsInCar);
-            for(int i=0;i< carsList1.size() ;i++)
-            {
-
-                carsList1.get(i).getCarAndPassengerDetais();
-
-            }
-            System.out.println("==============First List ============");
-
-            //optimizedList = Scheduler.optimize2(carsList1);
-
+            printData(timeTable1,carsList1,slotsInCar);
             assertEquals("0.0",Helper.getTotalCarCostString(carsList1));
         }
         catch (Exception e)
@@ -332,12 +245,7 @@ public class SchedulerTest {
         int slotsInCar=2;
 
         ArrayList<Car> carsList1= new ArrayList<Car>();
-        for(int i=0;i< totalcars ;i++)
-        {
-            Car car= new Car(i,slotsInCar);
-            carsList1.add(car);
-
-        }
+        initializeCars(carsList1,totalcars,slotsInCar);
 
         Student s111 = new Student(111,"12:01");
         Student s211 = new Student(211,"12:10");
@@ -351,17 +259,7 @@ public class SchedulerTest {
         timeTable1.add(s411);
 
         try {
-            Scheduler.optimzer(timeTable1, carsList1,slotsInCar);
-            for(int i=0;i< carsList1.size() ;i++)
-            {
-
-                carsList1.get(i).getCarAndPassengerDetais();
-
-            }
-            System.out.println("==============First List ============");
-
-            //optimizedList = Scheduler.optimize2(carsList1);
-
+            printData(timeTable1,carsList1,slotsInCar);
             assertEquals("188.0",Helper.getTotalCarCostString(carsList1));
         }
         catch (Exception e)
@@ -380,12 +278,7 @@ public class SchedulerTest {
         int slotsInCar=3;
 
         ArrayList<Car> carsList1= new ArrayList<Car>();
-        for(int i=0;i< totalcars ;i++)
-        {
-            Car car= new Car(i,slotsInCar);
-            carsList1.add(car);
-
-        }
+        initializeCars(carsList1,totalcars,slotsInCar);
 
         Student s111 = new Student(111,"13:01");
         Student s211 = new Student(211,"13:15");
@@ -399,17 +292,7 @@ public class SchedulerTest {
         timeTable1.add(s411);
 
         try {
-            Scheduler.optimzer(timeTable1, carsList1,slotsInCar);
-            for(int i=0;i< carsList1.size() ;i++)
-            {
-
-                carsList1.get(i).getCarAndPassengerDetais();
-
-            }
-            System.out.println("==============First List ============");
-
-            //optimizedList = Scheduler.optimize2(carsList1);
-
+            printData(timeTable1,carsList1,slotsInCar);
             assertEquals("0.0",Helper.getTotalCarCostString(carsList1));
         }
         catch (Exception e)
@@ -428,12 +311,7 @@ public class SchedulerTest {
         int slotsInCar=3;
 
         ArrayList<Car> carsList1= new ArrayList<Car>();
-        for(int i=0;i< totalcars ;i++)
-        {
-            Car car= new Car(i,slotsInCar);
-            carsList1.add(car);
-
-        }
+        initializeCars(carsList1,totalcars,slotsInCar);
 
         Student s111 = new Student(111,"13:01");
         Student s211 = new Student(211,"13:15");
@@ -456,17 +334,7 @@ public class SchedulerTest {
 
 
         try {
-            Scheduler.optimzer(timeTable1, carsList1,slotsInCar);
-            for(int i=0;i< carsList1.size() ;i++)
-            {
-
-                carsList1.get(i).getCarAndPassengerDetais();
-
-            }
-            System.out.println("==============First List ============");
-
-            //optimizedList = Scheduler.optimize2(carsList1);
-
+            printData(timeTable1,carsList1,slotsInCar);
             assertEquals("112.0",Helper.getTotalCarCostString(carsList1));
         }
         catch (Exception e)
@@ -485,12 +353,7 @@ public class SchedulerTest {
         int slotsInCar=4;
 
         ArrayList<Car> carsList1= new ArrayList<Car>();
-        for(int i=0;i< totalcars ;i++)
-        {
-            Car car= new Car(i,slotsInCar);
-            carsList1.add(car);
-
-        }
+        initializeCars(carsList1,totalcars,slotsInCar);
 
         Student s111 = new Student(111,"13:01");
         Student s211 = new Student(211,"13:15");
@@ -521,17 +384,7 @@ public class SchedulerTest {
 
 
         try {
-            Scheduler.optimzer(timeTable1, carsList1,slotsInCar);
-            for(int i=0;i< carsList1.size() ;i++)
-            {
-
-                carsList1.get(i).getCarAndPassengerDetais();
-
-            }
-            System.out.println("==============First List ============");
-
-            //optimizedList = Scheduler.optimize2(carsList1);
-
+            printData(timeTable1,carsList1,slotsInCar);
             assertEquals("530.0",Helper.getTotalCarCostString(carsList1));
         }
         catch (Exception e)
@@ -550,12 +403,7 @@ public class SchedulerTest {
         int slotsInCar=2;
 
         ArrayList<Car> carsList1= new ArrayList<Car>();
-        for(int i=0;i< totalcars ;i++)
-        {
-            Car car= new Car(i,slotsInCar);
-            carsList1.add(car);
-
-        }
+        initializeCars(carsList1,totalcars,slotsInCar);
 
         Student s111 = new Student(111,"10:05");
         Student s211 = new Student(211,"10:22");
@@ -581,17 +429,7 @@ public class SchedulerTest {
 
 
         try {
-            Scheduler.optimzer(timeTable1, carsList1,slotsInCar);
-            for(int i=0;i< carsList1.size() ;i++)
-            {
-
-                carsList1.get(i).getCarAndPassengerDetais();
-
-            }
-            System.out.println("==============First List ============");
-
-            //optimizedList = Scheduler.optimize2(carsList1);
-
+            printData(timeTable1,carsList1,slotsInCar);
             assertEquals("98.0",Helper.getTotalCarCostString(carsList1));
         }
         catch (Exception e)
@@ -610,12 +448,7 @@ public class SchedulerTest {
         int slotsInCar=2;
 
         ArrayList<Car> carsList1= new ArrayList<Car>();
-        for(int i=0;i< totalcars ;i++)
-        {
-            Car car= new Car(i,slotsInCar);
-            carsList1.add(car);
-
-        }
+        initializeCars(carsList1,totalcars,slotsInCar);
 
         Student s111 = new Student(111,"10:30");
         Student s211 = new Student(211,"10:30");
@@ -647,17 +480,7 @@ public class SchedulerTest {
 
 
         try {
-            Scheduler.optimzer(timeTable1, carsList1,slotsInCar);
-            for(int i=0;i< carsList1.size() ;i++)
-            {
-
-                carsList1.get(i).getCarAndPassengerDetais();
-
-            }
-            System.out.println("==============First List ============");
-
-            //optimizedList = Scheduler.optimize2(carsList1);
-
+            printData(timeTable1,carsList1,slotsInCar);
             assertEquals("0.0",Helper.getTotalCarCostString(carsList1));
         }
         catch (Exception e)
@@ -675,12 +498,7 @@ public class SchedulerTest {
         int slotsInCar=3;
 
         ArrayList<Car> carsList1= new ArrayList<Car>();
-        for(int i=0;i< totalcars ;i++)
-        {
-            Car car= new Car(i,slotsInCar);
-            carsList1.add(car);
-
-        }
+        initializeCars(carsList1,totalcars,slotsInCar);
 
         Student s111 = new Student(111,"10:30");
         Student s211 = new Student(211,"10:30");
@@ -710,17 +528,7 @@ public class SchedulerTest {
 
 
         try {
-            Scheduler.optimzer(timeTable1, carsList1,slotsInCar);
-            for(int i=0;i< carsList1.size() ;i++)
-            {
-
-                carsList1.get(i).getCarAndPassengerDetais();
-
-            }
-            System.out.println("==============First List ============");
-
-            //optimizedList = Scheduler.optimize2(carsList1);
-
+            printData(timeTable1,carsList1,slotsInCar);
             assertEquals("60.0",Helper.getTotalCarCostString(carsList1));
         }
         catch (Exception e)
@@ -738,12 +546,7 @@ public class SchedulerTest {
         int slotsInCar=3;
 
         ArrayList<Car> carsList1= new ArrayList<Car>();
-        for(int i=0;i< totalcars ;i++)
-        {
-            Car car= new Car(i,slotsInCar);
-            carsList1.add(car);
-
-        }
+        initializeCars(carsList1,totalcars,slotsInCar);
 
         Student s111 = new Student(111,"10:30");
         Student s211 = new Student(211,"10:31");
@@ -773,17 +576,7 @@ public class SchedulerTest {
 
 
         try {
-            Scheduler.optimzer(timeTable1, carsList1,slotsInCar);
-            for(int i=0;i< carsList1.size() ;i++)
-            {
-
-                carsList1.get(i).getCarAndPassengerDetais();
-
-            }
-            System.out.println("==============First List ============");
-
-            //optimizedList = Scheduler.optimize2(carsList1);
-
+            printData(timeTable1,carsList1,slotsInCar);
             assertEquals("2.0",Helper.getTotalCarCostString(carsList1));
         }
         catch (Exception e)
@@ -802,12 +595,7 @@ public class SchedulerTest {
         int slotsInCar=2;
 
         ArrayList<Car> carsList1= new ArrayList<Car>();
-        for(int i=0;i< totalcars ;i++)
-        {
-            Car car= new Car(i,slotsInCar);
-            carsList1.add(car);
-
-        }
+        initializeCars(carsList1,totalcars,slotsInCar);
 
         Student s111 = new Student(111,"13:30");
         Student s211 = new Student(211,"13:31");
@@ -843,17 +631,7 @@ public class SchedulerTest {
 
 
         try {
-            Scheduler.optimzer(timeTable1, carsList1,slotsInCar);
-            for(int i=0;i< carsList1.size() ;i++)
-            {
-
-                carsList1.get(i).getCarAndPassengerDetais();
-
-            }
-            System.out.println("==============First List ============");
-
-            //optimizedList = Scheduler.optimize2(carsList1);
-
+            printData(timeTable1,carsList1,slotsInCar);
             assertEquals("5.0",Helper.getTotalCarCostString(carsList1));
         }
         catch (Exception e)
@@ -865,5 +643,81 @@ public class SchedulerTest {
 
     }
 
+
+
+    @Test
+    public void fourcars3Slots08Students() {
+
+        int totalcars= 4;
+        int slotsInCar=3;
+
+        ArrayList<Car> carsList1= new ArrayList<Car>();
+
+        initializeCars(carsList1,totalcars,slotsInCar);
+
+
+
+        Student s111 = new Student(111,"10:05");
+        Student s211 = new Student(211,"10:05");
+        Student s311 = new Student(311,"10:06");
+        Student s411 = new Student(411,"13:01");
+        Student s511 = new Student(511,"16:20");
+        Student s611 = new Student(611,"16:25");
+        Student s711 = new Student(711,"17:00");
+        Student s811 = new Student(811,"17:45");
+
+
+        ArrayList<Student> timeTable1 = new ArrayList<Student>();
+        timeTable1.add(s111);
+        timeTable1.add(s211);
+        timeTable1.add(s311);
+        timeTable1.add(s411);
+        timeTable1.add(s511);
+        timeTable1.add(s611);
+        timeTable1.add(s711);
+        timeTable1.add(s811);
+
+
+
+
+        try {
+            printData(timeTable1,carsList1,slotsInCar);
+            assertEquals("41.0",Helper.getTotalCarCostString(carsList1));
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+
+
+
+    }
+
+    private static void printData(ArrayList<Student> timeTable1, ArrayList<Car> carsList1,int slotsInCar)
+    {
+        Scheduler.optimzer(timeTable1, carsList1,slotsInCar);
+        System.out.println("==============Students wait Time ============");
+        for(int i=0;i< carsList1.size() ;i++)
+        {
+
+            carsList1.get(i).getCarAndPassengerDetais();
+
+        }
+        System.out.println("==============Total Wait Time for All Students ============");
+        System.out.println( "Total Car wait time is ->" + Helper.getTotalCarCost(carsList1) + " mins");
+        System.out.println("==============Over ========================================");
+
+
+    }
+
+    private static void initializeCars(ArrayList<Car> carsList1,int totalcars,int  slotsInCar)
+    {
+        for(int i=0;i< totalcars ;i++)
+        {
+            Car car= new Car(i,slotsInCar);
+            carsList1.add(car);
+
+        }
+    }
 
 }
