@@ -12,6 +12,7 @@ import java.util.Collections;
 public class Scheduler {
 
     /*
+        Assumption : Timing is sorted in ascending order
         S=  Number of Students
         C=  Number of Cars
         ----------------------------------------------------------------------------------------------
