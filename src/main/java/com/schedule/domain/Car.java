@@ -75,13 +75,14 @@ public class Car {
         System.out.println("car ID"+carId);
         if(passengerList.size()>0)
         {
-            System.out.println("Total Car wait Time " + carcost + "mins");
+            System.out.println("Total Car wait Time " + carcost + " mins");
 
             for( int i =0;i<passengerList.size();i++)
             {
 
                  int studentid = passengerList.get(i).getStudentId();
-                System.out.println("Student in Car"+ " "+  carId+"is"+studentid + "came at" + passengerList.get(i).getArrivalTimeAsString()+"waited for "+
+                System.out.println("Student in Car "+ " "+  carId+ " " +"is"+ "-> " + studentid + " Arrival Time -> " + passengerList.get(i).getArrivalTimeAsString()
+                        +" Waited for ->"+
                         Time.getTimeDiffernce(passengerList.get(i).getArrivalTime(),passengerList.get(passengerList.size()-1).getArrivalTime())+"  mins");
             }
         }
