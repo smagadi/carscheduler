@@ -19,7 +19,7 @@ public class Scheduler {
         ----------------------------------------------------------------------------------------------
 
      1. optimize                    O(S)                                O(S) + O(C)
-     2. optimizeOnceMore            O(C)                                O(C)
+     2. optimizeOnceMore            O(C)                                O(C^2)
      3. Overall                     O(S) (Assuming students >cars)      O(C^2) + O(S)
      */
 public static void optimzer(ArrayList timeTable, ArrayList carList,int carSlots)
