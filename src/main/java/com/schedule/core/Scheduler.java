@@ -39,12 +39,12 @@ public static void optimzer(ArrayList timeTable, ArrayList carList,int carSlots)
 
 /*
 `
-    1.Get the carcosts in decreasing order
-    2.Find out if there are empty cars
+    1.Find out if there are empty cars
+    2.Sort the carcosts in decreasing order
     3.Loop through the heavy costing cars
-    4.Move the last element to empty car
+    4.Move the last element of the heavy car  to empty car
     5.Loop
-        Get the next last from the to be obtimzed car and check if the time nears the empty car one if so move passenger to that car
+        Get the next last from the to be optimized car and check if the time nears the empty car one if so move passenger to that car
         Else do not move exit the Loop
     6.end Loop
     ==========================Big 0 Analysis=================
@@ -127,8 +127,10 @@ private static void optimizeOnceMore( ArrayList carList) throws Exception {
              2. pick up the second student and find where is closer , if closer to first person then put this person in car 1
              3.If closer to next person then check if how many students has to be allocated and if there are enough capacity
              4.If there then push this person to next car else push him to first car
+         4. In case of last person , as there is nothing to compare allocate him to the current car else if no slots allot him to next car
         =================Big O Analysis=======================
-        1.Performance is O(S) S = number of Students . Space complexeity =O(S) S = number of students + O(C) C = number of Cars
+        1.Performance is O(S) S = number of Students . Space complexeity =O(S)
+        S = number of students + O(C) C = number of Cars
 
         */
 
